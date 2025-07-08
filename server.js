@@ -4,7 +4,7 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 let env
 try {
@@ -52,6 +52,14 @@ app.get('/recipes', async (req, res) => {
   if (!db) {
     console.error('Database connection not established.')
     return res.status(500)
+  }
+  try {
+    // 'recipes' コレクションからすべてのドキュメントを取得
+    const recipes = await db.collection(collectionName).find({}).toArray()
+    res.status(200).json({ recipes: recipes })
+  } catch (err) {
+    console.error('Error fetching recipes from MongoDB:', err)
+    res.status(500).json({ message: 'Failed to retrieve recipes' })
   }
 })
 
