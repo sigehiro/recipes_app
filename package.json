@@ -1,0 +1,23 @@
+{
+  "name": "deploy-rest",
+  "description": "track challenge",
+  "author": "Givery",
+  "devDependencies": {
+    "chai-http": "^3.0.0",
+    "eslint": "^3.18.0",
+    "js-yaml": "^3.11.0",
+    "chai": "^5.2.1",
+    "mocha": "^11.7.1"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "jquery": "^3.2.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "sync-request": "^4.1.0",
+    "then-request": "^4.1.0",
+    "valid-url": "^1.0.9",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0"
+  }
+}
